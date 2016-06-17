@@ -186,8 +186,3 @@ if __name__ == '__main__':
 		print "Example: "
 		print "$ python lsystem.py examples/pythagoriantree.txt 4"
 		exit(1)
-
-
-
-
-
