@@ -50,8 +50,11 @@ class Lsystem:
 						self.rules.append((a.strip(),b.strip()))
 				elif (split_line[0] == 'angle:'):
 					self.angle = int(split_line[1])
-				elif (split_line[0].startswith('#')):
-					pass # ignore comments
+				elif (split_line[0] == 'length:'):
+					self.length = int(split_line[1])
+				elif (split_line[0].startswith('#') or \
+					split_line[0] == ""):
+					pass # ignore comments and empty lines
 				else:
 					raise Exception(
 						'\n[ERROR] Cannot parse line: %s\n' % line)
@@ -117,33 +120,31 @@ class Lsystem:
 		tt.setpos(0, -200)
 		tt.seth(90)
 		tt.pendown()
-		tt.write("home = ", True, align="center")
-		tt.write((0,0))
 
 		print "Drawing the lsystem ..."
 		for i, codebit in enumerate(self.generation[-1]):
 
 			if codebit in ['F', 'A', 'B']:
 				tt.forward(self.length)
-				print '[ forward ] ', codebit
+				print '[ FRWD ] ', codebit
 			elif codebit == '+':
 				tt.right(self.angle)
-				print '[ right   ] ', codebit
+				print '[ RGHT ] ', codebit
 			elif codebit == '-':
 				tt.left(self.angle)
-				print '[ left    ] ', codebit
+				print '[ LEFT ] ', codebit
 			elif codebit == '[':
 				stack.append((tt.pos(), tt.heading()))
-				print '[ push    ] ', (tt.pos(), tt.heading())
+				print '[ PUSH ] ', (tt.pos(), tt.heading())
 			elif codebit == ']':
 				position,heading = stack.pop()
-				print '[ pop     ] ', (position, heading)
+				print '[ POP  ] ', (position, heading)
 				tt.penup()
 				tt.goto(position)
 				tt.seth(heading)
 				tt.pendown()
 			else:
-				print '[ nop     ] ', codebit
+				print '[ NOP  ] ', codebit
 			
 			if self.save_every_frame:
 				self.save(frame=i)
