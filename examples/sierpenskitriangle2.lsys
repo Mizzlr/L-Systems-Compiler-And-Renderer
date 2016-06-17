@@ -1,0 +1,5 @@
+variables: A B
+constants: + -
+start: A-B-B
+rules: (A->A-B+A+B-A) (B->BB)
+angle: 120

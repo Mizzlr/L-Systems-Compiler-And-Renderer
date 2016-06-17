@@ -1,0 +1,4 @@
+variables: A B
+constants: none
+axiom: A
+rules: (A->AB) (B->A)

@@ -1,0 +1,5 @@
+rules: (F->F[+F]F[-F]F)
+axiom: F
+variables: F
+constants: + - [ ]
+angle: 26

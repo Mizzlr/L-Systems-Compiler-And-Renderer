@@ -1,0 +1,5 @@
+angle: 60
+axiom: A
+rules: (A->A-B--B+A++AA+B-) (B->+A-BB--B-A++A+B)
+variables: A B
+constants: + -

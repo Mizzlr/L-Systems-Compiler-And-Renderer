@@ -1,0 +1,5 @@
+variables: I F
+constants: + -
+axiom: I
+angle: 90
+rules: (I->F+F+F+F) (F->FF+F-F+F+FF)

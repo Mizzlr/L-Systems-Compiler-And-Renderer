@@ -1,0 +1,5 @@
+axiom: X---X
+rules: (X->A-F+Z+F-AX) (Z->F-FF-F--[--Z]F-FF-F--F-FF-F--)
+constants: A F + - [ ]
+variables: X Z
+angle: 60

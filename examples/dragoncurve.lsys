@@ -1,0 +1,5 @@
+variables: X Y
+constants: F + -
+start: FX
+rules: (X->X+YF+) (Y->-FX-Y)
+angle: 90

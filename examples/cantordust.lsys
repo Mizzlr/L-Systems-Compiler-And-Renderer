@@ -1,0 +1,4 @@
+variables: A B
+constants: none
+start: A
+rules: (A->ABA) (B->BBB)

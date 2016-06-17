@@ -1,0 +1,5 @@
+variables: X Y 
+constants: + - F
+angle: 90
+axiom: X
+rules: (X->XFYFX+F+YFXFY-F-XFYFX) (Y->YFXFY-F-XFYFX+F+YFXFY) 

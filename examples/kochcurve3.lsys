@@ -1,0 +1,5 @@
+variables: F
+constants: + -
+axiom: F--F--F
+rules: (F->F+F--F+F)
+angle: 60
